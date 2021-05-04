@@ -1,0 +1,83 @@
+<pm-home></pm-home>
+ <p>{{checkforChange()}}</p>
+<div class='card'>
+    <div class='card-header' i18n>
+        {{pageTitle}}
+    </div>
+<div class='card-body'>
+    
+    
+        <div class='table-responsive'>
+             <table class='table' >
+                <thead>
+                    <tr>
+                        <th i18n>ProductImage </th>
+                        <th i18n>ProductName</th>
+                        <th i18n>ProdcutCode </th>
+                        <th i18n>CartOperation </th>
+                        <th i18n>Products</th>
+                        <th i18n>ProductPrice</th>
+                    </tr>
+                </thead>
+              <tbody>
+                     <tr *ngFor= 'let product of products'>
+                        <td>
+                            <img 
+                            [src]='product.imageUrl'
+                                  [title]='product.productName'
+                                  [style.width.px]='imageWidth'
+                                  [style.margin.px]='imageMargin'>   
+                        </td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode | lowercase }}</td>
+                        <td>
+                            
+                            <button id="1" type="button" class="btn btn-danger"(click)="addCartItem(product.id)" i18n>Add</button>
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-warning" (click)="minusCartItem(product.id)" i18n>Minus</button>
+                        </td>
+                        <td style="color: blue;">{{product.productquantity}}</td>
+                        <td>{{product.price | currency:"&#8377;"}}</td>
+                        
+                    </tr>
+
+              </tbody>
+            </table>
+        <br/>
+        
+        <div class='table-responsive'>
+            <table class='table' >
+               <thead>
+                   <tr>
+                       <th  colspan="6" i18n>Total Product </th>
+                   <td>{{productTotal}}</td>
+                   
+                   <th  colspan="6" i18n>Total Price </th>
+                   <td>{{productPrice| currency:"&#8377;"}}</td>
+                    </tr>
+               </thead>
+            </table>   
+
+        </div>
+        
+ </div>
+ <div class='card-footer'>
+      
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class='btn btn-outline-secondary'
+            style="width:200px; color : blue"
+            (click)='onBack()'>
+      <i class='fa fa-chevron-left' i18n></i>Back To Shopping
+    </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class='btn btn-outline-secondary'
+          style="width: 140px;  color:red;" 
+            (click)='cheoukout()' i18n>
+            Checkout   <i class='fa fa-chevron-right'></i>
+    </button>
+  </div>
+
+
+</div>

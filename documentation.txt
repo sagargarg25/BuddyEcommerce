@@ -1,0 +1,52 @@
+
+
+Project Deployment Link
+https://sagar-e1a68.web.app
+
+Github Upload Link
+
+
+
+
+In order to login 
+1 user
+{
+Email: sagar@gmail.com
+Password: sagar@123
+}
+
+2 User 
+{
+Email: saif@gmail.com
+Password: saif@123
+
+}
+
+for login use any of them . they are some more user but by using any of one you can check the complete application
+
+
+If you data in cart in any user then it is added as a defualt
+
+
+1.> Implemented both bonus point that is internationalization and category
+1.a> Internationaliation has three language (English,Spanish,France)
+1.2> I have implemented only categores not sub categories
+
+
+2> Have auth gaurd for all pages except product, prodect detail page as these are comman page
+2.a> I you have not login then you cant access because of auth guard in which i check whether through stprage seesion
+2.b> if you enter wrong url the you navigate back to product page.
+
+2.c>I have used in Memory web api in this application so data not preserve after refresh
+
+4> in login i have just check from the database then save that email in the session storage to maintaion authentication from auth guard
+
+5> test case of one Login Component and User Service
+ 
+6> toastr servies to show some messages on the page
+7> modular solution
+
+
+
+
+

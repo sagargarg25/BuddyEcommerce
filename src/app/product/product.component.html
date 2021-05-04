@@ -1,0 +1,63 @@
+<pm-home></pm-home>
+<br/>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" *ngFor= 'let categories of category' >            
+                <li class="nav-item active">
+                <button style="border: none; background-color:aqua ;" >   <a class="nav-link active" (click)='getCategoryProduct(categories.id)'>{{categories.Category}}</a>
+                </button></li>             
+        </ul>      
+    </div>
+ </nav>
+ <br/>
+ <br/>
+ <div class='card'>
+    <div class='card-header'i18n>
+        {{pageTitle}}
+    </div>
+<div class='card-body'>
+    <div class="row">
+       <div class ='col-md-2' i18n>Filter by:</div>
+        <div class ='col-md-4'>
+          <input type="text"
+          [(ngModel)]='listFilter'/>
+        </div>
+     </div>
+     <div class='row'>
+        <div class ='col-md-6'>
+          <h6 i18n>Filtered by:{{listFilter}}</h6>
+        </div>
+     </div>
+        <div class='table-responsive'>
+             <table class='table' >
+                <thead>
+                    <tr>
+                        <th i18n>ProductImage </th>
+                        <th i18n>ProductName</th>
+                        <th i18n>ProdcutCode </th>
+                        <th i18n>price</th>
+                    </tr>
+                </thead>
+              <tbody>
+                     <tr *ngFor= 'let products of filteredProducts'>
+                        <td>
+                            <img 
+                            [src]='products.imageUrl'
+                                  [title]='products.productName'
+                                  [style.width.px]='imageWidth'
+                                  [style.margin.px]='imageMargin'>   
+                        </td>
+                        <td><a routerLink='/productdetail'
+                             [queryParams]="{id:products.id}"
+                            >{{products.productName}}</a></td>
+                            <td>{{products.productCode | lowercase | convertToSpacs:'-'}}</td>
+                           <td>{{products.price | currency:"&#8377;"}}</td>
+                        
+                    </tr>
+
+              </tbody>
+            </table>
+        </div>
+
+ </div>
+</div>

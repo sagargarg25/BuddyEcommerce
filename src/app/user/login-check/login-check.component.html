@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button type="button" class="btn btn-outline-primary"><a >Buddy Luma ecommerice </a></button>
+  </nav>
+  
+<br/>
+<br/>
+<div class="card">
+    <div class="card-header" i18n>
+      {{Title}}
+    </div>
+
+    <div class="card-body">
+        <form novalidate
+              (ngSubmit)="saved()"
+            [formGroup]="customForm" >
+
+                        
+                
+            <div class="form-group row mb-2">
+            
+                <label class="col-md-2 col-form-label"
+                for="Email" i18n>Email</label>
+                <div class="col-md-8">
+                    <input class="form-control"
+                    id="Email"
+                    type="text"
+                    i18n i18n-placeholder
+                    placeholder="Email (required)"
+                    formControlName="Email"
+                    [ngClass]="{'is-invalid': (customForm.get('Email').touched || customForm.get('Email').dirty)
+                     && !customForm.get('Email').valid }" />
+                    <span class="invalid-feedback">
+                        <span *ngIf="customForm.get('Email').errors?.required" i18n>
+                          Please enter your email.
+                        </span>
+                        <span *ngIf="customForm.get('Email').errors?.email" i18n>
+                         Enter email correctly
+                        </span>
+                      </span>
+                    
+                </div>
+                    </div>
+     
+                    <div class="form-group row mb-2">
+            
+                        <label class="col-md-2 col-form-label"
+                        for="password" i18n>password</label>
+                        <div class="col-md-8">
+                            <input class="form-control"
+                            id="password"
+                            type="password"
+                            i18n i18n-placeholder
+                            placeholder="password (required)"
+                            
+                            formControlName="password"
+                            [ngClass]="{'is-invalid': (customForm.get('password').touched || customForm.get('password').dirty)
+                             && !customForm.get('password').valid }" />
+                            <span class="invalid-feedback" >
+                                <span *ngIf="customForm.get('password').errors?.required" i18n>
+                                  Please enter password.
+                                </span>
+                              </span>
+                            
+                        </div>
+                            </div>
+                
+                    
+            <label *ngIf="isloginError" class="col-md-8 col-form-label" style="color: red; text-align: center; margin-left: 100px; " i18n > Incorrect UserName or Password
+            </label>
+                    <div class="form-group row mb-2">
+                        <div class="offset-md-2 col-md-4">
+                          <button class="btn btn-primary mr-3"
+                                  type="submit"
+                                  style="width:80px"
+                                  [title]="customForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                                  [disabled]="!customForm.valid" i18n i18n-placeholder>
+                            Login
+                          </button>
+                        </div >
+                        
+                      </div>
+                    
+
+
+
+
+        </form>
+      

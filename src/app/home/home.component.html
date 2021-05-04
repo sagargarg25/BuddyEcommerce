@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <a href="/products" class="link-primary">Buddy Luma ecommerice </a> 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        
+          <ng-container>
+              <mat-icon>language</mat-icon>
+              <button mat-button [matMenuTriggerFor]="menu">
+                  {{siteLanguage}}
+                  <mat-icon>arrow_drop_down</mat-icon>
+              </button> 
+               <mat-menu #menu="matMenu">
+                <a mat-menu-item href="/en">English</a>
+                <a mat-menu-item href="/fr">Français</a>
+                <a mat-menu-item href="/es">Española</a>
+            </mat-menu>
+            </ng-container>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+      
+    <div *ngIf=login>
+          <button type="button" class="btn btn-primary"  (click)="ClickMe()" i18n>Login</button>  
+  
+        </div>
+     
+    <div *ngIf=logout>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+     Welcome Mr/Mrs<b style="margin-right: 30px;">{{userEmail}}</b>
+        
+     
+        <button type="button" class="btn btn-warning" (click)="logoutfunc()" i18n>Logout</button>   
+     </div>
+    </div> 
+</nav>
+     

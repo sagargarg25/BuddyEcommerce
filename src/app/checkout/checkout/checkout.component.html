@@ -1,0 +1,283 @@
+<pm-home></pm-home>
+
+<p>{{checkforChange()}}</p>
+
+
+ <br/>
+ <br/>
+<div style="width: 60%; float:left">
+    <div class="card" >
+        <div class="card-header" style="background-color: lightblue;" i18n >
+          Checkout Page
+        </div>
+    
+        <div class="card-body">
+            <form novalidate
+                  (ngSubmit)="saved()"
+                [formGroup]="customForm" >
+    
+                            
+                    
+                <div class="form-group row mb-2">
+                
+                    <label class="col-md-2 col-form-label"
+                    for="Name" i18n>Name</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                        id="Name"
+                        type="text"
+                        i18n i18n-placeholder
+                        placeholder="Name (required)"
+                        formControlName="Name"
+                        [ngClass]="{'is-invalid': (customForm.get('Name').touched || customForm.get('Name').dirty)
+                         && !customForm.get('Name').valid }" />
+                        <span class="invalid-feedback">
+                            <span *ngIf="customForm.get('Name').errors?.required" i18n>
+                              Please enter your Name
+                            </span>
+                            <span *ngIf="customForm.get('Name').errors?.pattern" i18n>
+                             Please enter Name correctly
+                            </span>
+                            <span *ngIf="customForm.get('Name').errors?.minlength" i18n>
+                              Please enter at least three character
+                             </span>
+                          </span>
+                        
+                    </div>
+                        </div>
+         
+                        <div class="form-group row mb-2">                
+                            <label class="col-md-2 col-form-label"
+                            for="Email" i18n>Email</label>
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                id="Email"
+                                type="text"
+                                i18n i18n-placeholder
+                                placeholder="Email (required)"
+                                
+                                formControlName="Email"
+                                [ngClass]="{'is-invalid': (customForm.get('Email').touched || customForm.get('Email').dirty)
+                                 && !customForm.get('Email').valid }" />
+                                <span class="invalid-feedback">
+                                    <span *ngIf="customForm.get('Email').errors?.required" i18n>
+                                      Please enter your email.
+                                    </span>
+                                    <span *ngIf="customForm.get('Email').errors?.email" i18n>
+                                      Enter Correct email.
+                                    </span>
+
+                                  </span>
+                                
+                            </div>
+                                </div>
+                    
+                        
+                                <div class="form-group row mb-2">                
+                                  <label class="col-md-2 col-form-label"
+                                  for="State" i18n>State</label>
+                                  <div class="col-md-8">
+                                      <input class="form-control"
+                                      id="State"
+                                      type="text"
+                                      i18n i18n-placeholder
+                                      placeholder="State (required)"
+                                      
+                                      formControlName="State"
+                                      [ngClass]="{'is-invalid': (customForm.get('State').touched || customForm.get('State').dirty)
+                                       && !customForm.get('State').valid }" />
+                                      <span class="invalid-feedback">
+                                          <span *ngIf="customForm.get('State').errors?.required" i18n >
+                                            Please enter your state.
+                                          </span>
+                                          <span *ngIf="customForm.get('State').errors?.pattern" i18n >
+                                            Please enter State Name correctly
+                                           </span>
+                                           <span *ngIf="customForm.get('State').errors?.minlength" i18n>
+                                             Please enter at least three character
+                                            </span>
+               
+                                        </span>
+                                      
+                                  </div>
+                                      </div>
+                                      <div class="form-group row mb-2">                
+                                        <label class="col-md-2 col-form-label"
+                                        for="City" i18n>City</label>
+                                        <div class="col-md-8">
+                                            <input class="form-control"
+                                            id="City"
+                                            type="text"
+                                            i18n i18n-placeholder
+                                            placeholder="City (required)"
+                                            
+                                            formControlName="City"
+                                            [ngClass]="{'is-invalid': (customForm.get('City').touched || customForm.get('City').dirty)
+                                             && !customForm.get('City').valid }" />
+                                            <span class="invalid-feedback">
+                                                <span *ngIf="customForm.get('City').errors?.required" i18n>
+                                                  Please enter your city
+                                                </span>
+                                                <span *ngIf="customForm.get('City').errors?.pattern" i18n>
+                                                  Please enter City Name correctly
+                                                 </span>
+                                                 <span *ngIf="customForm.get('City').errors?.minlength" i18n>
+                                                   Please enter at least three character
+                                                  </span>
+                     
+                                              </span>
+                                            
+                                        </div>
+                                            </div>
+                                            <div class="form-group row mb-2">                
+                                              <label class="col-md-2 col-form-label"
+                                              for="Address" i18n >Delivery Address</label>
+                                              <div class="col-md-8">
+                                                  <input class="form-control"
+                                                  id="Address"
+                                                  type="text"
+                                                  i18n i18n-placeholder
+                                                  placeholder="Address (required)"
+                                                  
+                                                  formControlName="Address"
+                                                  [ngClass]="{'is-invalid': (customForm.get('Address').touched || customForm.get('Address').dirty)
+                                                   && !customForm.get('Address').valid }" />
+                                                  <span class="invalid-feedback">
+                                                      <span *ngIf="customForm.get('Address').errors?.required" i18n>
+                                                        Please enter your Address.
+                                                      </span>
+                                                    </span>
+                                                  
+                                              </div>
+                                                  </div>
+                                                  <div class="form-group row mb-2">                
+                                                    <label class="col-md-2 col-form-label"
+                                                    for="Pincode" i18n>Pincode</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control"
+                                                        id="Pincode"
+                                                        type="text"
+                                                        i18n i18n-placeholder
+                                                        placeholder="Pincode (required)"
+                                                        
+                                                        formControlName="Pincode"
+                                                        [ngClass]="{'is-invalid': (customForm.get('Pincode').touched || customForm.get('Pincode').dirty)
+                                                         && !customForm.get('Pincode').valid }" />
+                                                        <span class="invalid-feedback">
+                                                            <span *ngIf="customForm.get('Pincode').errors?.required" i18n>
+                                                              Please enter your area pincode.
+                                                            </span>
+                                                       
+                                                            <span *ngIf="customForm.get('Pincode').errors?.pincode" i18n>
+                                                              Please enter six digit pincode
+                                                            </span>
+
+                                                          </span>
+                                                        
+                                                    </div>
+                                                        </div>
+                                                        <div class="form-group row mb-2">                
+                                                          <label class="col-md-2 col-form-label"
+                                                          for="phoneno" i18n >Phone Number</label>
+                                                          <div class="col-md-8">
+                                                              <input class="form-control"
+                                                              id="phoneno"
+                                                              type="text"
+                                                              i18n i18n-placeholder
+                                                              placeholder="phoneno (required)"
+                                                              
+                                                              formControlName="phoneno"
+                                                              [ngClass]="{'is-invalid': (customForm.get('phoneno').touched || customForm.get('phoneno').dirty)
+                                                               && !customForm.get('phoneno').valid }" />
+                                                              <span class="invalid-feedback">
+                                                                  <span *ngIf="customForm.get('phoneno').errors?.required" i18n >
+                                                                    Please enter your Phone Number.
+                                                                  </span>
+                                                                  <span *ngIf="customForm.get('phoneno').errors?.pattern" i18n >
+                                                                    Your Phone Number length should be 10 
+                                                                  </span>
+       
+                                                                </span>
+                                                              
+                                                          </div>
+                                                              </div>
+                                                                                                              
+               
+               
+               
+               
+               
+               
+                                <label *ngIf="isloginError" class="col-md-8 col-form-label" style="color: red; text-align: center; margin-left: 100px; " i18n> Incorrect UserName or Password
+                </label>
+                        <div class="form-group row mb-2">
+                            <div class="offset-md-2 col-md-4">
+                              <button class="btn btn-primary mr-3"
+                                      type="submit"
+                                      style="width:120px"
+                                      [title]="customForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                                      [disabled]="!customForm.valid " i18n>
+                                Place Order
+                              </button>
+                            </div >
+                            
+                          </div>
+                        
+    
+    
+    
+    
+            </form>
+      </div>
+    </div>    
+ </div>
+  
+ 
+ 
+ <div style="width: 10%; float:left">
+    <div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+
+   
+ </div>
+ </div>
+   
+ <div style="width: 30%; float:left">
+  
+    <div class="card" >
+        <div class="card-header" >
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted" i18n >Your cart</span>
+              </h4>
+              <ul class="list-group mb-3" *ngFor= 'let products of cartUserProduct'>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div>
+                     <p>  <img 
+                        [src]='products.imageUrl'
+                              [title]='products.productName'
+                              [style.width.px]='imageWidth'
+                              [style.margin.px]='imageMargin'>  </p>
+                    <h6 class="my-0">{{products.productName}}</h6>
+                    <small class="text-muted" i18n >Qty : </small>
+                    <small><b>{{products.productquantity}} </b></small>
+
+                  </div>
+                  <span class="text-muted">{{products.price| currency:"&#8377;"}}</span>
+                </li>
+               
+              </ul>
+            </div>
+            <div class='card-footer'>
+      
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button class='btn btn-outline-secondary'
+                      style="width:200px; color : blue"
+                      (click)='onBack()'>
+                <i class='fa fa-chevron-left' i18n></i>Back To Shopping
+              </button>
+            </div>
+ </div>
